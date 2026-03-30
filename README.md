@@ -3,7 +3,7 @@ Autonomous Delivery Agent Simulation
 This project simulates an autonomous delivery agent navigating a city grid to find the most efficient route from a start point to a destination. It demonstrates how different pathfinding algorithms tackle the same problem, with a focus on fuel optimization using A* search.
 
 Features
-A Search*
+A* Search
 Finds the most efficient path using a heuristic based on Manhattan distance.
 Minimizes total steps (fuel).
 Breadth-First Search (BFS)
