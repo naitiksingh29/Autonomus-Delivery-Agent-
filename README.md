@@ -1,49 +1,98 @@
-Autonomous Delivery Agent Simulation
+ Autonomous Delivery Agent Pathfinding Simulator
+ Project Overview
 
-This project simulates an autonomous delivery agent navigating a city grid to find the most efficient route from a start point to a destination. It demonstrates how different pathfinding algorithms tackle the same problem, with a focus on fuel optimization using A* search.
+In today’s world, autonomous systems like delivery robots and self-driving vehicles rely heavily on efficient pathfinding to reach their destinations. This project simulates a simple Autonomous Delivery Agent that navigates through a grid-based environment while avoiding obstacles and finding the best possible route to its destination.
 
-Features
-A* Search
-Finds the most efficient path using a heuristic based on Manhattan distance.
-Minimizes total steps (fuel).
-Breadth-First Search (BFS)
-Explores the grid layer by layer.
-Guarantees the shortest path in an unweighted grid.
-Depth-First Search (DFS)
-Explores deeply along paths before backtracking.
-Finds a valid path, but not necessarily the shortest.
-Interactive Command-Line Interface
-Choose which algorithm to run or compare all at once.
-Grid Visualization
-Displays a text-based grid highlighting the path found.
-Getting Started
-Prerequisites
-Python 3.x
-Installation
-Download or clone the repository.
-Save the main file as autonom.py.
-Running the Program
-Open a terminal.
-Navigate to the folder containing autonom.py.
+The main goal of this project is to understand and compare different pathfinding algorithms and observe how they behave in the same environment.
+
+ Problem Statement
+
+The challenge is to design an intelligent agent that can move from a starting point to a goal location in a grid while:
+
+Avoiding obstacles
+Minimizing distance (or fuel consumption)
+Choosing an efficient path
+ Approach & Methodology
+
+To solve this problem, three well-known search algorithms were implemented:
+
+ A* Search Algorithm
+
+A* is used to find the most efficient path by combining:
+
+The actual cost from the start (g(n))
+An estimated cost to the goal using Manhattan Distance (h(n))
+
+This makes A* both optimal and efficient, especially for grid-based navigation.
+
+ Breadth-First Search (BFS)
+
+BFS explores the grid level by level and guarantees the shortest path in an unweighted environment. However, it may explore many unnecessary nodes, making it less efficient than A*.
+
+ Depth-First Search (DFS)
+
+DFS explores as deep as possible before backtracking. It is simple but does not guarantee the shortest path, making it less reliable for optimal navigation.
+
+ Environment Representation
+
+The environment is represented as a 2D grid:
+
+0 → Free space
+1 → Obstacle
+S → Start position
+G → Goal position
+. → Path taken by the agent
+# How the System Works
+The grid is predefined with obstacles.
+The agent starts at position (0,0) and aims to reach (4,7).
+The user selects an algorithm from the menu.
+The chosen algorithm computes a path.
+The result is displayed visually in the console.
+# How to Run the Program
+Make sure Python 3 is installed
+Save the file (e.g., pathfinding.py)
 Run the program:
-python autonom.py
-Follow the on-screen menu to select an algorithm and see the path results.
-How the Algorithms Work
-Algorithm	Description	Guarantees Optimal Path?
-A*	Uses a heuristic to guide the search. Finds the path with the least total cost.	 Yes
-BFS	Explores nodes level by level. Guarantees the shortest path in terms of steps.	Yes
-DFS	Explores one path fully before backtracking. Does not guarantee the shortest path.	No
+python pathfinding.py
+Choose an option from the menu to run a specific algorithm or all of them.
 
-Notes:
+ #Output Description
 
-A* is the most efficient for fuel optimization due to its heuristic guidance.
-BFS is simple and reliable for unweighted grids.
-DFS can find paths quickly in small grids but may be inefficient.
-Future Improvements
-Support for weighted grids with varying fuel costs.
-Add obstacles or dynamic environments.
-Implement a graphical interface for visualization.
-Support diagonal movement.
-License
+The program prints the grid showing:
 
-This project is open-source and free to use for educational purposes.
+The selected path
+Number of steps taken
+Fuel used (equal to steps)
+
+Example:
+
+--- A* Search ---
+S . . . # . . .
+  # # . # . # .
+  . . . . . . .
+# # . # # # . .
+  . . . . . . G
+
+Steps: 11, Fuel used: 11
+ Key Observations
+A* and BFS always find the shortest path
+A* is more efficient due to heuristic guidance
+DFS may find longer or less optimal paths
+# Applications
+
+This project demonstrates concepts used in:
+
+Autonomous delivery robots
+Self-driving cars
+Game AI navigation
+Robotics path planning
+Future Enhancements
+Add diagonal movement
+Introduce weighted paths (different fuel costs)
+Create a graphical interface (GUI)
+Simulate real-time movement of the agent
+
+# Conclusion
+
+This project successfully demonstrates how different pathfinding algorithms work in a grid-based environment. It highlights the importance of choosing the right algorithm for efficiency and optimality in real-world autonomous systems
+
+
