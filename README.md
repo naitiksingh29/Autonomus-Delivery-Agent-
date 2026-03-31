@@ -30,9 +30,9 @@ python autonom.py
 Follow the on-screen menu to select an algorithm and see the path results.
 How the Algorithms Work
 Algorithm	Description	Guarantees Optimal Path?
-A*	Uses a heuristic to guide the search. Finds the path with the least total cost.	✅ Yes
-BFS	Explores nodes level by level. Guarantees the shortest path in terms of steps.	✅ Yes
-DFS	Explores one path fully before backtracking. Does not guarantee the shortest path.	❌ No
+A*	Uses a heuristic to guide the search. Finds the path with the least total cost.	 Yes
+BFS	Explores nodes level by level. Guarantees the shortest path in terms of steps.	Yes
+DFS	Explores one path fully before backtracking. Does not guarantee the shortest path.	No
 
 Notes:
 
